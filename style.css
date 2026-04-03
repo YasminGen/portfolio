@@ -109,16 +109,14 @@ body {
     top: 50%;
     transform: translateY(-50%);
     width: 650px;
-    height: 650px;
-    overflow: hidden;
     border-radius: 10px;
     z-index: 55;
 }
 
 .hero-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     filter: grayscale(50%) saturate(1.8);
 }
 
@@ -218,7 +216,6 @@ body {
 
 .about-image-wrapper {
     flex: 1;
-    overflow: hidden;
     border-radius: 5px;
     max-width: 400px;
 }
@@ -227,7 +224,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     filter: saturate(1.3) brightness(1.1);
 }
 
@@ -313,7 +310,6 @@ body {
 }
 
 .contact-image-wrapper {
-    overflow: hidden;
     border-radius: 5px;
     max-width: 300px;
     margin-left: auto;
@@ -323,7 +319,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* Works Grid */
@@ -348,8 +344,8 @@ body {
 
 .work-category img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     border-radius: 5px;
 }
 
@@ -376,7 +372,6 @@ body {
 
     .hero-image-wrapper {
         width: 250px;
-        height: 250px;
         right: 10%;
     }
 
@@ -422,6 +417,6 @@ body {
     }
 
     .work-category img {
-        height: 150px;
+        height: auto;
     }
 }
