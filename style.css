@@ -10,9 +10,7 @@ html {
 
 body {
     font-family: 'roc-grotesk', sans-serif;
-    background-color: #FFFFFF;
-    color: #000000;
-    overflow-x: hidden;
+    background-color: #F5F5F5;
     font-size: 26px;
     line-height: 38px;
     display: flex;
@@ -32,7 +30,7 @@ body > section {
     position: fixed;
     width: 100%;
     top: 0;
-    background-color: #FFFFFF;
+    background-color: #F5F5F5;
     z-index: 100;
 }
 
@@ -106,6 +104,17 @@ body > section {
         background: transparent;
         position: static;
     }
+
+    /* Footer: same 100px sides as .navbar — inner container-fluid padding zeroed (mirrors navbar rule) */
+    .footer {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .footer .container-fluid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
 
 /* ============================================================
@@ -120,8 +129,8 @@ body > section {
         left: 0 !important;
         width: 100% !important;
         z-index: 1050 !important;
-        background: white !important;
-        background-color: #ffffff !important;
+        background: #F5F5F5 !important;
+        background-color: #F5F5F5 !important;
     }
 
     /* Navbar inside wrapper: static — the wrapper handles the fixing */
@@ -136,8 +145,8 @@ body > section {
         position: static !important;
         top: auto !important;
         margin-top: -2px !important;
-        background: white !important;
-        background-color: #ffffff !important;
+        background: #F5F5F5 !important;
+        background-color: #F5F5F5 !important;
         opacity: 1 !important;
         border: none !important;
         border-bottom: 1px solid #E0E0E0 !important;
@@ -157,8 +166,8 @@ body > section {
 
     /* 2. Navbar: solid white, no shadows/borders */
     .navbar {
-        background: white !important;
-        background-color: #ffffff !important;
+        background: #F5F5F5 !important;
+        background-color: #F5F5F5 !important;
         opacity: 1 !important;
         backdrop-filter: none !important;
         padding: 0 !important;
@@ -174,8 +183,8 @@ body > section {
     .navbar .container-fluid {
         position: relative !important;
         flex-wrap: nowrap !important;
-        background: white !important;
-        background-color: #ffffff !important;
+        background: #F5F5F5 !important;
+        background-color: #F5F5F5 !important;
         padding: 0 !important;
         min-height: 118px !important;
         align-items: center !important;
@@ -200,8 +209,8 @@ body > section {
     /* 5. Collapsed menu: absolute, drops below navbar, solid white */
     .navbar-collapse {
         text-align: right !important;
-        background: white !important;
-        background-color: #ffffff !important;
+        background: #F5F5F5 !important;
+        background-color: #F5F5F5 !important;
         margin: 0 !important;
     }
 
@@ -214,8 +223,8 @@ body > section {
 
     .navbar-collapse.show,
     .navbar-collapse.collapsing {
-        background: white !important;
-        background-color: #ffffff !important;
+        background: #F5F5F5 !important;
+        background-color: #F5F5F5 !important;
         opacity: 1 !important;
         position: absolute !important;
         top: 100% !important;
@@ -312,17 +321,22 @@ body > section {
 
 /* Footer */
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 30px 50px;
     position: static;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: #F5F5F5;
     border-top: 1px solid #E0E0E0;
     z-index: 100;
     margin-top: auto !important;
     flex-shrink: 0 !important;
+}
+
+/* Inner container mirrors navbar's container-fluid — this is where flex lives */
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .footer-left, .footer-right {
@@ -330,6 +344,11 @@ body > section {
     line-height: 30px;
     color: #000000;
 }
+
+/* footer-left/right: 0 extra padding — the outer .footer already provides 100px on desktop,
+   matching the navbar's 100px. Any positive value here would overshoot the logo edge. */
+.footer-left  { padding-left:  0 !important; }
+.footer-right { padding-right: 0 !important; }
 
 /* Page Content */
 .page-content {
@@ -420,6 +439,8 @@ body > section {
 .contact-text {
     flex: 1;
     padding-left: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-text h1 {
@@ -480,13 +501,14 @@ body > section {
 
 .location {
     font-size: 16px;
-    margin-top: 105px;
+    margin-top: auto;
+    padding-top: 40px;
 }
 
 .contact-image-wrapper {
     max-width: 300px;
     margin-left: auto;
-    margin-right: 15px;
+    margin-right: 5vw;
 }
 
 .contact-image {
@@ -554,7 +576,7 @@ body > section {
     left: 0;
     right: 0;
     z-index: 90;
-    background-color: #FFFFFF;
+    background-color: #F5F5F5;
     border-bottom: 1px solid #E0E0E0;
 }
 
@@ -565,7 +587,7 @@ body > section {
     right: 0;
     width: 40px;
     height: 100%;
-    background: linear-gradient(to right, transparent, #FFFFFF);
+    background: linear-gradient(to right, transparent, #F5F5F5);
     pointer-events: none;
 }
 
@@ -614,13 +636,14 @@ body > section {
         position: fixed;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 200;
+        z-index: 9999;
         text-decoration: none;
         color: #000000;
         font-size: 32px;
         line-height: 1;
         padding: 12px 16px;
         transition: color 0.3s ease;
+        opacity: 1;
     }
 
     .project-nav-arrow:hover {
@@ -1022,7 +1045,7 @@ body > section {
 @media (max-width: 768px) {
     .hero-title {
         font-size: 80px;
-        background-color: #FFFFFF;
+        background-color: #F5F5F5;
         padding: 20px 40px;
         border-radius: 5px;
     }
@@ -1294,25 +1317,98 @@ body > section {
         flex: 1 0 auto;
     }
 
-    /* Contact: pull content up so footer is visible */
+    /* Contact: push content down enough to clear the navbar */
     body.page-short .contact-section {
-        padding-top: 10vh !important;
+        padding-top: 15vh !important;
     }
 
-    /* Contact image: cap height so it doesn't push footer off-screen */
+    /* Contact: shrink section so footer sits naturally at bottom */
+    .contact-section {
+        min-height: auto !important;
+        padding-bottom: 2vh !important;
+    }
+
+    /* Contact section scoped to page-short: hard cap height so footer is never squished */
+    body.page-short .contact-section {
+        height: auto !important;
+        max-height: 70vh !important;
+    }
+
+    /* Contact image: cap height — one rule only */
     body.page-short .contact-image {
-        max-height: 50vh;
+        max-height: 60vh !important;
         width: auto;
     }
 
-    /* Works page: reduce top padding and cap thumbnail images */
+    /* Works page: push content down from navbar, keep bottom clear of footer */
     body.page-short .page-content {
-        padding-top: 10vh !important;
+        padding-top: 12vh !important;
         padding-bottom: 0 !important;
     }
 
+    /* Works headline: no gap below h1 — keeps whole block compact */
+    body.page-short .page-content h1 {
+        margin-bottom: 0 !important;
+    }
+
+    body.page-short .page-content .row.g-4 {
+        margin-bottom: 8vh !important;
+    }
+
+    /* Works: no gap between title row and image row — footer stays locked */
+    body.page-short .page-content .row {
+        margin-top: 0 !important;
+    }
+
+    /* Contact: extra gap between headline and body text */
+    body.page-short .contact-info {
+        margin-top: 5vh;
+    }
+
+    body.page-short .contact-image-wrapper {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        max-width: 500px;
+    }
+
+    /* Berlin sits flush at the column bottom — 4px relative nudge slides text down to image baseline */
+    body.page-short .location {
+        margin-top: auto;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+        position: relative;
+        top: 15px !important;
+    }
+
+    /* Text column: no bottom padding so Berlin's baseline IS the column floor.
+       5px top nudge shifts the whole column down slightly to meet the image base. */
+    body.page-short .contact-text {
+        padding-bottom: 0 !important;
+        padding-top: 5px !important;
+    }
+
+    /* Vertically align text column and image to bottom so image base matches Berlin line */
+    /* 4vh gap on the whole row — both image AND text sit 4vh above the footer */
+    body.page-short .contact-content {
+        align-items: flex-end !important;
+        margin-bottom: 4vh !important;
+    }
+
+    /* Remove duplicate contact-image rule below — consolidated above */
+
+    /* About: match same h1-to-body gap as contact (10vh), align-items: flex-start so margin works */
+    body.page-short .about-content {
+        align-items: flex-start;
+    }
+
+    body.page-short .about-text p:first-of-type {
+        margin-top: 10vh;
+    }
+
     body.page-short .work-category img {
-        max-height: 40vh;
+        max-height: 48vh;
         width: 100%;
         object-fit: contain;
     }
