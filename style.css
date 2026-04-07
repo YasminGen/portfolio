@@ -18,18 +18,18 @@
 
 /* Thin scrollbar */
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
 }
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background: #b0b0b0;
-    border-radius: 3px;
+    background: #1A1A1A;
+    border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #888888;
+    background: #000000;
 }
 
 html {
@@ -107,9 +107,8 @@ h1 {
 }
 
 .navbar.scrolled {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    padding-top: 12px;
-    padding-bottom: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 15px 50px;
 }
 
 .navbar-transparent {
@@ -119,11 +118,11 @@ h1 {
 .logo {
     text-decoration: none;
     display: inline-block;
-    transition: transform 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .logo:hover {
-    transform: scale(1.05);
+    opacity: 0.75;
 }
 
 .logo-image {
@@ -135,12 +134,11 @@ h1 {
 .navbar-nav .nav-link {
     text-decoration: none;
     color: #000000 !important;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.05em;
-    text-transform: lowercase;
-    transition: color 0.3s ease;
-    padding: 0;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    padding: 6px 14px;
 }
 
 .navbar-nav .nav-link:hover {
@@ -485,7 +483,7 @@ h1 {
         max-width: none !important;
         width: 100% !important;
         margin-left: 0 !important;
-        margin-top: 25px;
+        margin-top: 50px;
     }
 
     .design-main-video {
@@ -560,6 +558,8 @@ h1 {
 .page-content {
     padding: 120px 80px 100px;
     min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .page-content h1 {
@@ -581,6 +581,8 @@ h1 {
 .about-section {
     padding: 200px 80px 100px;
     min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .about-content {
@@ -898,6 +900,8 @@ h1 {
 .editorial-section {
     padding: 120px 80px 120px;
     min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .editorial-section h1 {
@@ -910,7 +914,7 @@ h1 {
 }
 
 .editorial-intro {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     max-width: 800px;
 }
 
@@ -1025,6 +1029,8 @@ h1 {
 .animation-section {
     padding: 120px 80px 150px;
     min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .animation-section h1 {
@@ -1079,7 +1085,7 @@ h1 {
 
 .animation-description {
     max-width: 800px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .animation-description p {
@@ -1093,6 +1099,8 @@ h1 {
 .design-section {
     padding: 120px 80px 120px;
     min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .design-section h1 {
@@ -1239,7 +1247,7 @@ h1 {
 }
 
 .berry-intro {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     max-width: 800px;
 }
 
@@ -1279,6 +1287,8 @@ h1 {
 .posters-section {
     padding: 120px 80px 100px;
     min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .posters-section h1 {
