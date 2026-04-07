@@ -51,30 +51,37 @@
     <section class="animation-section">
         <h1>Animation</h1>
         
-        <div class="animation-intro">
-            <p>Two versions of the same Gif, stop motion animation and illustrated animation.</p>
-            <p>First semester project 2024.</p>
+        <div class="berry-intro">
+            <p>Two versions of the same Gif — stop motion animation and illustrated animation. First semester project 2024.</p>
         </div>
-
-        <div class="animation-gallery">
-            <div class="animation-project">
-                <div class="row g-3 animation-images">
-                    <div class="col-12 col-md-6"><img src="assets/Berry_gif_2D Yasmin _1.png" alt="Animation 1" class="img-fluid"></div>
-                    <div class="col-12 col-md-6"><img src="assets/Berry_gif_2D Yasmin _1.png" alt="Animation 2" class="img-fluid"></div>
-                </div>
+        <div class="berry-grid">
+            <div class="berry-item">
+                <img src="assets/Berry_gif_2D Yasmin_.gif" alt="Berry 2D animated gif">
+            </div>
+            <div class="berry-item">
+                <img src="assets/Berry_gif_3D_Yasmin.gif" alt="Berry 3D animated gif">
             </div>
         </div>
 
-        <div class="animation-description">
-            <p>Short animated video about beauty standards and the culture surrounding cosmetic procedures. Titled Two Faced, the project reflects on the pressure to meet idealised appearances and the impact of the beauty industry. Created as a group assignment, Second semester project, 2025.</p>
-        </div>
-
-        <div class="animation-gallery">
-            <div class="animation-project">
-                <div class="row g-3 animation-images">
-                    <div class="col-12 col-md-6"><img src="assets/animation/Screenshot 2026-03-28 at 23.37.15 1.png" alt="Animation Scene" class="img-fluid"></div>
-                    <div class="col-12 col-md-6"><img src="assets/animation/Screenshot 2026-03-28 at 23.38.39 1.png" alt="Animation Faces" class="img-fluid"></div>
+        <div class="design-content design-content--spaced">
+            <div class="design-left">
+                <div class="design-text">
+                    <p>Short animated video about beauty standards and the culture surrounding cosmetic procedures. Titled Two Faced, the project reflects on the pressure to meet idealised appearances and the impact of the beauty industry. Created as a group assignment, Second semester project, 2025.</p>
                 </div>
+                <div class="design-main-image">
+                    <div class="video-wrapper">
+                        <video src="assets/2faced.mp4" loop playsinline controls preload="metadata" poster="assets/animation/Screenshot 2026-03-28 at 23.37.15 1.png" class="design-main-video" id="animVideo"></video>
+                        <button class="custom-play-btn" id="animPlayBtn" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-right">
+                <img src="assets/animation/Screenshot 2026-03-28 at 23.37.15 1.png" alt="Two Faced Animation">
+                <img src="assets/animation/Screenshot 2026-03-28 at 23.38.39 1.png" alt="Two Faced Animation">
+                <img src="assets/animation/Screenshot 2026-03-28 at 23.39.07 1.png" alt="Two Faced Animation">
             </div>
         </div>
     </section>
@@ -87,6 +94,40 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const animVid = document.getElementById('animVideo');
+        const animPlayBtn = document.getElementById('animPlayBtn');
+
+        animPlayBtn.addEventListener('click', () => {
+            animVid.muted = false;
+            animVid.play();
+            animPlayBtn.style.display = 'none';
+            if (window.innerWidth < 992) {
+                const req = animVid.requestFullscreen
+                    || animVid.webkitRequestFullscreen
+                    || animVid.mozRequestFullScreen
+                    || animVid.msRequestFullscreen;
+                if (req) req.call(animVid);
+            }
+        });
+
+        animVid.addEventListener('click', () => {
+            if (!animVid.paused) animVid.pause();
+        });
+
+        function onAnimStop() {
+            animPlayBtn.style.display = 'flex';
+            if (window.innerWidth < 992) {
+                const exit = document.exitFullscreen
+                    || document.webkitExitFullscreen
+                    || document.mozCancelFullScreen
+                    || document.msExitFullscreen;
+                if (exit && document.fullscreenElement) exit.call(document);
+            }
+        }
+        animVid.addEventListener('pause', onAnimStop);
+        animVid.addEventListener('ended', onAnimStop);
+    </script>
     <script>
     (function() {
         var inner = document.querySelector('.mobile-project-switcher-inner');
