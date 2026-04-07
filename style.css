@@ -394,7 +394,7 @@ body > section {
         flex: 0 0 35% !important;
         max-width: 35% !important;
         margin-left: 0 !important;
-        transform: translate(-41px, -18px) !important;
+        transform: translate(-41px, 20px) !important;
     }
 
     .design-text {
@@ -584,8 +584,8 @@ body > section {
 }
 
 .contact-info strong {
-    font-family: 'roc-grotesk-wide', sans-serif;
-    font-weight: 400;
+    font-family: 'roc-grotesk', sans-serif;
+    font-weight: 700;
 }
 
 .contact-info p {
@@ -943,7 +943,7 @@ body > section {
 
 /* Animation Section */
 .animation-section {
-    padding: 120px 80px 10px;
+    padding: 120px 80px 150px;
     min-height: 100vh;
 }
 
@@ -1128,6 +1128,16 @@ body > section {
     object-fit: contain;
     max-width: 400px;
     border-radius: 0 !important;
+}
+
+.project-title {
+    font-size: 22px;
+    font-family: 'roc-grotesk-wide', sans-serif;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 5px;
+    margin-top: 0;
+    line-height: 1.2;
 }
 
 .berry-intro {
@@ -1501,7 +1511,7 @@ body > section {
     }
 
     .animation-section {
-        padding: 220px 20px 80px;
+        padding: 220px 20px 150px;
     }
 
     .animation-section h1 {
