@@ -289,40 +289,88 @@ body > section {
     right: 250px;
     top: 50%;
     transform: translateY(-50%);
-    width: 650px;
+    width: 600px;
+    max-width: 600px;
     z-index: 55;
-    overflow: hidden !important;
+    overflow: visible;
 }
 
-.hero-image {
+/* Hero SVG stack: portrait over star */
+.hero-stack {
+    position: relative;
     width: 100%;
-    height: auto;
-    object-fit: contain;
-    filter: grayscale(50%) saturate(1.8);
+    max-width: 450px;
+    margin: 0 auto;
+    overflow: visible; /* star bursts beyond the portrait bounds */
+    perspective: 1000px;
+    backface-visibility: hidden;
+}
+
+.hero-star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    width: 140%;
+    z-index: 1;
+    filter: blur(2px);
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+.hero-portrait {
+    position: relative;
     display: block;
-}
-
-/* Video: hidden by default, matches image dimensions exactly — no layout shift on swap */
-.hero-video {
-    display: none;
     width: 100%;
     height: auto;
-    object-fit: cover;
-    transform: scale(1.02); /* micro-zoom to crop any stray bottom edge */
-    background-color: #F5F5F5;
-    vertical-align: bottom; /* eliminates browser descender gap */
-    margin-bottom: -2px !important; /* safety net for any sub-pixel remnant */
+    max-width: 450px;
+    z-index: 2;
+    backface-visibility: hidden;
+    /* no mix-blend-mode — keeps colours accurate */
 }
 
-/* Mobile: video replaces the photo entirely — autoplay handles playback */
+@keyframes wiggle {
+    0%   { transform: translate(-50%, -50%) rotate(-3deg) scale(1); }
+    50%  { transform: translate(-50%, -50%) rotate(3deg) scale(1.05); }
+    100% { transform: translate(-50%, -50%) rotate(-3deg) scale(1); }
+}
+
+.hero-stack:hover .hero-star {
+    animation: wiggle 1.5s ease-in-out infinite;
+}
+
+/* Mobile: shrink desktop layout to fit, stop horizontal scroll, auto-play wiggle */
 @media (max-width: 991.98px) {
-    .hero-image {
-        display: none !important;
+    html, body {
+        overflow-x: hidden !important;
     }
 
-    .hero-video {
-        display: block !important;
-        opacity: 1 !important;
+    /* Collapse hero height so footer follows naturally */
+    .hero {
+        height: auto !important;
+        min-height: unset !important;
+        padding-top: 30px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .hero-stack {
+        transform: scale(0.8);
+        margin-bottom: 10px !important;
+    }
+
+    .hero-title {
+        margin-top: 10px !important;
+    }
+
+    /* No hover on touch — wiggle plays automatically */
+    .hero-stack:hover .hero-star {
+        animation: none;
+    }
+
+    .hero-star {
+        animation: wiggle 3s ease-in-out infinite;
     }
 }
 
