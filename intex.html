@@ -31,17 +31,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-image-wrapper" id="heroMediaWrapper">
-                <img src="assets/Yasmin_starPhoto.png" alt="Yasmin" class="hero-image" id="heroImage">
-                <video
-                    src="assets/Yasmin_starVideo.mp4"
-                    class="hero-video"
-                    id="heroVideo"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                ></video>
+            <div class="hero-image-wrapper">
+                <div class="hero-stack">
+                    <img src="assets/Star_2.svg" alt="" class="hero-star">
+                    <img src="assets/BDFM_2026_04_07_11_14.svg" alt="Yasmin" class="hero-portrait">
+                </div>
             </div>
             <img src="assets/Yasmin.png" alt="Yasmin" class="hero-title">
         </div>
@@ -55,26 +49,5 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const wrapper = document.getElementById('heroMediaWrapper');
-        const img     = document.getElementById('heroImage');
-        const video   = document.getElementById('heroVideo');
-
-        // Hover swap only on desktop — mobile shows video by default via CSS
-        if (window.matchMedia('(min-width: 992px)').matches) {
-            wrapper.addEventListener('mouseenter', () => {
-                img.style.display   = 'none';
-                video.style.display = 'block';
-                video.play();
-            });
-
-            wrapper.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime   = 0;
-                video.style.display = 'none';
-                img.style.display   = 'block';
-            });
-        }
-    </script>
 </body>
 </html>
