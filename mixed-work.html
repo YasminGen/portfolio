@@ -42,5 +42,13 @@
             <div class="footer-right">Portfolio</div>
         </div>
     </footer>
+    <script>
+        (function(){
+            var nav = document.querySelector('.navbar');
+            window.addEventListener('scroll', function(){
+                nav.classList.toggle('scrolled', window.pageYOffset > 50);
+            });
+        })();
+    </script>
 </body>
 </html>
