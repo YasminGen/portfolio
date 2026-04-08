@@ -100,13 +100,14 @@ h1 {
     position: fixed;
     width: 100%;
     top: 0;
-    background-color: var(--bg-color);
+    background-color: transparent !important;
     box-shadow: none;
-    transition: box-shadow 0.3s ease, padding 0.3s ease;
-    z-index: 100;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    z-index: 1000;
 }
 
 .navbar.scrolled {
+    background-color: #F9F9F7 !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     padding: 15px 50px;
 }
@@ -207,8 +208,8 @@ h1 {
         left: 0 !important;
         width: 100% !important;
         z-index: 1050 !important;
-        background: #F5F5F5 !important;
-        background-color: #F5F5F5 !important;
+        background: #F9F9F7 !important;
+        background-color: #F9F9F7 !important;
     }
 
     /* Navbar inside wrapper: static — the wrapper handles the fixing */
@@ -223,8 +224,8 @@ h1 {
         position: static !important;
         top: auto !important;
         margin-top: -2px !important;
-        background: #F5F5F5 !important;
-        background-color: #F5F5F5 !important;
+        background: #F9F9F7 !important;
+        background-color: #F9F9F7 !important;
         opacity: 1 !important;
         border: none !important;
         border-bottom: 1px solid #E0E0E0 !important;
@@ -244,8 +245,8 @@ h1 {
 
     /* 2. Navbar: solid white, no shadows/borders */
     .navbar {
-        background: #F5F5F5 !important;
-        background-color: #F5F5F5 !important;
+        background: #F9F9F7 !important;
+        background-color: #F9F9F7 !important;
         opacity: 1 !important;
         backdrop-filter: none !important;
         padding: 0 !important;
@@ -261,8 +262,8 @@ h1 {
     .navbar .container-fluid {
         position: relative !important;
         flex-wrap: nowrap !important;
-        background: #F5F5F5 !important;
-        background-color: #F5F5F5 !important;
+        background: #F9F9F7 !important;
+        background-color: #F9F9F7 !important;
         padding: 0 !important;
         min-height: 118px !important;
         align-items: center !important;
@@ -287,8 +288,8 @@ h1 {
     /* 5. Collapsed menu: absolute, drops below navbar, solid white */
     .navbar-collapse {
         text-align: right !important;
-        background: #F5F5F5 !important;
-        background-color: #F5F5F5 !important;
+        background: #F9F9F7 !important;
+        background-color: #F9F9F7 !important;
         margin: 0 !important;
     }
 
@@ -301,8 +302,8 @@ h1 {
 
     .navbar-collapse.show,
     .navbar-collapse.collapsing {
-        background: #F5F5F5 !important;
-        background-color: #F5F5F5 !important;
+        background: #F9F9F7 !important;
+        background-color: #F9F9F7 !important;
         opacity: 1 !important;
         position: absolute !important;
         top: 100% !important;
@@ -434,12 +435,21 @@ h1 {
     }
 
     .hero-stack {
-        transform: scale(0.8);
-        margin-bottom: 10px !important;
+        transform: scale(1.4);
+        margin-top: 40px !important;
+        margin-bottom: 80px !important;
     }
 
     .hero-title {
-        margin-top: 10px !important;
+        margin-top: 120px !important;
+        margin-bottom: 40px !important;
+        margin-left: -10px !important;
+        margin-right: -10px !important;
+        width: max-content !important;
+        max-width: calc(95vw + 20px) !important;
+        min-width: 320px !important;
+        height: auto !important;
+        display: block !important;
     }
 
     /* No hover on touch — wiggle plays automatically */
@@ -670,6 +680,39 @@ h1 {
     font-weight: 700;
 }
 
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.contact-link:active,
+#email-copy:active {
+    color: var(--accent-pink) !important;
+}
+
+#copied-msg {
+    position: absolute;
+    top: -1.4em;
+    left: 0;
+    font-size: 11px;
+    color: var(--accent-pink);
+    font-family: 'roc-grotesk', sans-serif;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+#copied-msg.show {
+    opacity: 1;
+}
+
 .contact-info p {
     font-size: 16px;
     line-height: 2;
@@ -784,7 +827,7 @@ h1 {
     left: 0;
     right: 0;
     z-index: 90;
-    background-color: #F5F5F5;
+    background-color: #F9F9F7;
     border-bottom: 1px solid #E0E0E0;
 }
 
@@ -795,7 +838,7 @@ h1 {
     right: 0;
     width: 40px;
     height: 100%;
-    background: linear-gradient(to right, transparent, #F5F5F5);
+    background: linear-gradient(to right, transparent, #F9F9F7);
     pointer-events: none;
 }
 
@@ -1287,8 +1330,6 @@ h1 {
 .posters-section {
     padding: 120px 80px 100px;
     min-height: 100vh;
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
 .posters-section h1 {
@@ -1382,7 +1423,7 @@ h1 {
 @media (max-width: 768px) {
     .hero-title {
         font-size: 80px;
-        background-color: #F5F5F5;
+        background-color: #F9F9F7;
         padding: 20px 40px;
         border-radius: 5px;
     }

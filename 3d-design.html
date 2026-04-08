@@ -58,7 +58,7 @@
                 </div>
                 <div class="design-main-image">
                     <div class="video-wrapper">
-                        <video src="assets/Final_video_compressed.mp4" muted loop playsinline preload="metadata" poster="assets/3d design/Scene_1 2.png" class="design-main-video" id="designVideo"></video>
+                        <video src="assets/Final_video_compressed.mp4" muted loop preload="metadata" poster="assets/3d design/Scene_1 2.png" class="design-main-video" id="designVideo" webkit-allowsfullscreen mozallowsfullscreen allowfullscreen></video>
                         <button class="custom-play-btn" id="customPlayBtn" aria-label="Play video">
                             <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg>
                         </button>
@@ -141,7 +141,7 @@
         (function(){
             var nav = document.querySelector('.navbar');
             window.addEventListener('scroll', function(){
-                nav.classList.toggle('scrolled', window.pageYOffset > 50);
+                nav.classList.toggle('scrolled', window.scrollY > 10);
             });
         })();
     </script>

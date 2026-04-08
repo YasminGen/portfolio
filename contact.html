@@ -34,9 +34,9 @@
             <div class="contact-text">
                 <h1>Contact</h1>
                 <div class="contact-info">
-                    <p><strong>Email:</strong> yasmin.gendelevich@gmail.com</p>
-                    <p><strong>Instagram:</strong> @maxefa_</p>
-                    <p><strong>LinkedIn:</strong> Yasmin Gendelevich</p>
+                    <p><strong>Email:</strong> <span id="email-copy" style="cursor: pointer; position: relative;" onclick="copyEmail()">yasmin.gendelevich@gmail.com<span id="copied-msg">Copied!</span></span></p>
+                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/maxefa_/" target="_blank" rel="noopener noreferrer" class="contact-link">@maxefa_</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yasmin-gendelevich/" target="_blank" rel="noopener noreferrer" class="contact-link">Yasmin Gendelevich</a></p>
                 </div>
                 <div class="resume-link">
                     <p>To see My Resume click <a href="#"><span class="pink-highlight">here</span></a></p>
@@ -58,10 +58,19 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        function copyEmail() {
+            navigator.clipboard.writeText('yasmin.gendelevich@gmail.com').then(function() {
+                var msg = document.getElementById('copied-msg');
+                msg.classList.add('show');
+                setTimeout(function() { msg.classList.remove('show'); }, 2000);
+            });
+        }
+    </script>
+    <script>
         (function(){
             var nav = document.querySelector('.navbar');
             window.addEventListener('scroll', function(){
-                nav.classList.toggle('scrolled', window.pageYOffset > 50);
+                nav.classList.toggle('scrolled', window.scrollY > 10);
             });
         })();
     </script>
