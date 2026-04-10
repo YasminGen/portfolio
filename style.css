@@ -1,3 +1,10 @@
+/* THE WINNING PUSH */
+@media (min-width: 1024px) and (max-width: 1500px) {
+    body, .main-wrapper, #app { 
+        padding-top: 100px !important; /* Adjust this number to push more/less */
+        margin-top: 0 !important;
+    }
+}
 * {
     margin: 0;
     padding: 0;
