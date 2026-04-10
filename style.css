@@ -1,3 +1,10 @@
+
+/* Only the word 'here' turns white on click, star remains pink */
+.pink-highlight:active {
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+}
+
 @media (max-width: 1700px) {
     .pink-highlight::before {
         zoom: 0.8 !important;
@@ -786,10 +793,13 @@ h1 {
 }
 
 
+
 .resume-link a {
     text-decoration: none;
     color: #000000;
 }
+
+
 
 .pink-highlight {
     color: #000000;
