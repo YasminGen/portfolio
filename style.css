@@ -1,4 +1,38 @@
+@media (max-width: 1700px) {
+    .pink-highlight::before {
+        zoom: 0.8 !important;
+        margin-left: 7px !important;
+    }
+}
+@media (max-width: 1700px) {
+    .pink-highlight::before {
+        width: 45px !important;
+        height: 30px !important;
+        content: url('assets/Star_1.png') !important; /* Forces the image to reload */
+        display: inline-block !important;
+        background: transparent !important; /* REMOVES RED TEST */
+        /* THIS IS THE KEY TO SHRINKING IT */
+        transform: scale(0.7) !important; 
+        transform-origin: left center !important;
+    }
+}
+@media (max-width: 1500px) {
+    .pink-highlight::before {
+        width: 50px !important;
+        height: 35px !important;
+    }
+}
 /* ...existing code... */
+@media (min-width: 1024px) and (max-width: 1536px) {
+    .pink-highlight::before {
+        width: 50px !important;  /* Shrunken for MacBook */
+        height: 35px !important; /* Shrunken for MacBook */
+        content: url('assets/Star_1.png') !important;
+        display: inline-block !important;
+        background-size: contain !important;
+    }
+}
+
 @media (min-width: 1900px) {
     .pink-highlight::before {
         display: inline-block !important;
