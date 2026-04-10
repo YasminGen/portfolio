@@ -1,3 +1,20 @@
+@media (min-width: 1024px) and (max-width: 1440px) {
+    /* Target the text container specifically */
+    .about-text, [class*='text-container'] {
+        transform: translateX(-60px) !important;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1536px) {
+    .about-text {
+        margin-left: -80px !important;
+    }
+}
+/* --- Ensure About Me content is lowered on ultra-wide screens --- */
+@media (min-width: 1920px) {
+    .about-content {
+        margin-top: 100px !important;
+    }
+}
 
 /* Only the word 'here' turns white on click, star remains pink */
 .pink-highlight:active {
@@ -652,7 +669,7 @@ h1 {
 
 /* About Section */
 .about-section {
-    padding: 200px 80px 100px;
+    padding: 40px 80px 100px;
     min-height: 100vh;
     max-width: 100%;
     margin: 0 auto;
