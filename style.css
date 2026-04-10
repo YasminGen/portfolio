@@ -1,3 +1,12 @@
+/* ...existing code... */
+@media (min-width: 1900px) {
+    .pink-highlight::before {
+        display: inline-block !important;
+        margin-left: 8px !important;   /* This pushes the whole box right */
+        margin-top: 0px !important;   /* This pushes the whole box up */
+        background: transparent !important; /* REMOVE THE RED TEST */
+    }
+}
 /* THE WINNING PUSH */
 @media (min-width: 1024px) and (max-width: 1500px) {
     body, .main-wrapper, #app { 
@@ -738,7 +747,10 @@ h1 {
 .resume-link {
     margin: 40px 0;
     font-size: 16px;
+    position: relative !important;
+    z-index: 1 !important;
 }
+
 
 .resume-link a {
     text-decoration: none;
@@ -759,9 +771,10 @@ h1 {
     position: absolute !important;
     top: 30% !important;
     left: 5% !important;
-    transform: translate(calc(-50% - 5px), calc(-50% - 5px)) !important;
-    width: 35px !important;
-    height: 35px !important;
+    transform: translate(-35px, -28px) !important;
+    z-index: -1 !important;
+    width: 90px !important;
+    height: 60px !important;
     opacity: 1 !important;
     z-index: -1 !important;
 }
