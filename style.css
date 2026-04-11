@@ -1,3 +1,7 @@
+/* Move only the images of both projects to the left, text stays untouched */
+.editorial-gallery .editorial-project {
+    margin-left: -80px;
+}
 /* Make cover images for both projects larger */
 .editorial-images img[src*="pretty_in_pink/cover"],
 .editorial-images img[src*="chicago_of_europe/cover"] {
