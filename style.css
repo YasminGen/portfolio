@@ -1,3 +1,24 @@
+/* Reduce horizontal gap between spread 1 and 2, and between spread 3 and 4, for both projects */
+.editorial-images img[alt$='Spread 2'],
+.editorial-images img[alt$='Spread 4'] {
+    margin-left: -32px !important;
+}
+/* Absolutely collapse all gap, padding, margin, and border between spread images for both projects */
+.editorial-images img,
+.editorial-images:nth-of-type(1) img:nth-child(2),
+.editorial-images:nth-of-type(1) img:nth-child(3),
+.editorial-images:nth-of-type(2) img:nth-child(1),
+.editorial-images:nth-of-type(2) img:nth-child(2) {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
 /* Move only the images of both projects to the left, text stays untouched */
 .editorial-gallery .editorial-project {
     margin-left: -80px;
@@ -1128,8 +1149,15 @@ h1 {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 45% 1fr 1fr;
-    column-gap: 25px;
-    row-gap: 15px;
+    column-gap: 0px;
+    gap: 0 !important;
+    border-spacing: 0 !important;
+    padding: 0 !important;
+    row-gap: 0 !important;
+    /* Pull the second row of spreads up to minimize the gap between spread 2 and 3 */
+    .editorial-images:nth-of-type(2) img {
+        margin-top: -32px !important;
+    }
     grid-template-rows: clamp(200px, 30vw, 400px) calc(clamp(200px, 30vw, 400px) * 0.8 / 1.2);
 }
 
@@ -1592,8 +1620,8 @@ h1 {
 
     .footer {
         padding: 10px 20px;
-        font-size: 12px;
-    }
+            padding: 0 !important;
+            margin: 0 !important;
 
     .page-content {
         padding: 80px 30px 80px;
