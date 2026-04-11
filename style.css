@@ -1,3 +1,8 @@
+@media (max-width: 991.98px) {
+    .about-section {
+        padding-top: 120px !important;
+    }
+}
 @media (min-width: 1024px) and (max-width: 1440px) {
     body.page-short .page-content {
         margin-top: -90px !important;
