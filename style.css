@@ -1,4 +1,17 @@
 @media (min-width: 1024px) and (max-width: 1440px) {
+    body.page-short .page-content {
+        margin-top: -90px !important;
+        padding-top: 0 !important;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1440px) {
+    /* Target the main container of the Works page */
+    .works-container, #works, main {
+        margin-top: -60px !important;
+        padding-top: 0 !important;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1440px) {
     /* Target the text container specifically */
     .about-text, [class*='text-container'] {
         transform: translateX(-60px) !important;
