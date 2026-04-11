@@ -1,3 +1,9 @@
+.poster-image img[src*="franklinGothic_poster"] {
+    filter: contrast(1.1) brightness(0.95);
+}
+.poster-image img {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.38);
+}
 @media (max-width: 991.98px) {
     .about-section {
         padding-top: 120px !important;
@@ -1375,11 +1381,6 @@ h1 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.berry-item img,
-.animation-images img,
-.poster-image img {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
 
 .video-wrapper {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
